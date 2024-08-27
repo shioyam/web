@@ -3,59 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自己紹介サイト</title>
+    <title>自己紹介</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            max-width: 700px;
+            padding: 30px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            border: 5px solid #4facfe;
             margin-bottom: 20px;
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 10px;
+            color: #333;
         }
         p {
             line-height: 1.6;
+            font-size: 1.1em;
+            margin-bottom: 20px;
         }
         .contact-info {
             margin-top: 20px;
         }
         .contact-info a {
-            color: #007BFF;
+            color: #4facfe;
             text-decoration: none;
+            font-weight: bold;
         }
         .contact-info a:hover {
             text-decoration: underline;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #4facfe;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+        .social-icons a:hover {
+            color: #00f2fe;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="profile.jpg" alt="プロフィール写真" class="profile-img">
-        <h1>Michihiro Shioya</h1>
-        <p>こんにちは！。Copy&Pasteでプログラミングしています。。</p>
-        <p>趣味は水泳、ランニングです。新しいTechnologyに興味があります。</p>
+        <h1>山田 太郎</h1>
+        <p>こんにちは！私は山田太郎です。ウェブ開発者として10年以上の経験があります。フロントエンドからバックエンドまで幅広く対応できます。特にJavaScriptとPythonに強みがあります。</p>
+        <p>趣味は読書、ハイキング、プログラミングです。新しい技術を学ぶことが大好きです。</p>
         <div class="contact-info">
             <h2>連絡先</h2>
-            <p>Email: <a href="mailto:taro.shioyam@gmail.com">shioyam@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/shioyam" target="_blank">https://github.com/shioyam</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/shioyam" target="_blank">https://www.linkedin.com/in/shioyam</a></p>
+            <p>Email: <a href="mailto:taro.yamada@example.com">taro.yamada@example.com</a></p>
+            <p>GitHub: <a href="https://github.com/taroyamada" target="_blank">github.com/taroyamada</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/taroyamada" target="_blank">linkedin.com/in/taroyamada</a></p>
+        </div>
+        <div class="social-icons">
+            <a href="https://twitter.com/taroyamada" target="_blank">Twitter</a>
+            <a href="https://facebook.com/taroyamada" target="_blank">Facebook</a>
         </div>
     </div>
 </body>
