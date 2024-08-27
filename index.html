@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michihiro Shioya</title>
+    <title>自己紹介</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -51,6 +52,13 @@
             color: #2e8b57; /* 濃い緑色 */
             text-decoration: none;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .contact-info a i {
+            margin-right: 10px;
         }
         .contact-info a:hover {
             text-decoration: underline;
@@ -72,18 +80,18 @@
 <body>
     <div class="container">
         <img src="profile.jpg" alt="プロフィール写真" class="profile-img">
-        <h1>HI, I'm Michihiro Shioya.</h1>
-        <p>Copy& PasteでWebページを作っています。</p>
-        <p>趣味は水泳、ジョギングなど個人でできるスポーツ全般。新しいテクノロジーに興味があます。</p>
+        <h1>山田 太郎</h1>
+        <p>こんにちは！私は山田太郎です。ウェブ開発者として10年以上の経験があります。フロントエンドからバックエンドまで幅広く対応できます。特にJavaScriptとPythonに強みがあります。</p>
+        <p>趣味は読書、ハイキング、プログラミングです。新しい技術を学ぶことが大好きです。</p>
         <div class="contact-info">
             <h2>連絡先</h2>
-            <p>Email: <a href="mailto:shioyam@gmail.com">shioyam@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/shioyam" target="_blank">github.com/shioyam</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/shioyam" target="_blank">linkedin.com/in/shioyam</a></p>
+            <p><a href="mailto:taro.yamada@example.com"><i class="fas fa-envelope"></i> taro.yamada@example.com</a></p>
+            <p><a href="https://github.com/taroyamada" target="_blank"><i class="fab fa-github"></i> github.com/taroyamada</a></p>
+            <p><a href="https://www.linkedin.com/in/taroyamada" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/taroyamada</a></p>
         </div>
         <div class="social-icons">
-            <a href="https://twitter.com/taroyamada" target="_blank">Twitter</a>
-            <a href="https://facebook.com/taroyamada" target="_blank">Facebook</a>
+            <a href="https://twitter.com/taroyamada" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/taroyamada" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </div>
 </body>
