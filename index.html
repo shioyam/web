@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michihiro shioya</title>
+    <title>自己紹介</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <style>
+    <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -48,6 +48,9 @@
         .contact-info {
             margin-top: 20px;
         }
+        .contact-info h2 {
+            margin-bottom: 10px;
+        }
         .contact-info a {
             color: #000000; /* 黒色 */
             text-decoration: none;
@@ -79,24 +82,33 @@
             width: 1.5em;
             height: 1.5em;
         }
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* アイコン間のスペース */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="profile.jpeg" alt="プロフィール写真" class="profile-img">
-        <h1>Hi, I'm Michihiro Shioya.</h1>
-        <p>| Japanese | Information technology | Swimer | Health conscious |</p>
-        <p>I enjoy individual sports like swimming and jogging. I'm also interested in new technology.</p>
+        <img src="profile.jpg" alt="プロフィール写真" class="profile-img">
+        <h1>山田 太郎</h1>
+        <p>こんにちは！私は山田太郎です。ウェブ開発者として10年以上の経験があります。フロントエンドからバックエンドまで幅広く対応できます。特にJavaScriptとPythonに強みがあります。</p>
+        <p>趣味は読書、ハイキング、プログラミングです。新しい技術を学ぶことが大好きです。</p>
         <div class="contact-info">
-            <h2>Contact</h2>
-            <a href="https://github.com/shioyam" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/shioyam" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <h2>連絡先</h2>
+            <p><a href="mailto:taro.yamada@example.com"><i class="fas fa-envelope"></i> taro.yamada@example.com</a></p>
+            <div class="contact-icons">
+                <a href="https://github.com/taroyamada" target="_blank"><img src="x-icon.png" alt="Xのアイコン"></a> <!-- GitHubのアイコンをXのアイコンに変更 -->
+                <a href="https://www.linkedin.com/in/taroyamada" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
         <div class="social-icons">
             <h2>SNS</h2>
-            <a href="https://twitter.com/michishioya" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://facebook.com/shioyam" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com/oyaji_ms" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/taroyamada" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/taroyamada" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/taroyamada" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </body>
