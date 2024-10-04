@@ -13,7 +13,7 @@ document.getElementById('translateButton').addEventListener('click', async () =>
         const params = new URLSearchParams({
             auth_key: apiKey,
             text: textToTranslate,
-            target_lang: 'EN'  // 翻訳先の言語を指定 (例: 英語)
+            target_lang: 'DE'  // 翻訳先の言語を指定 (例: 英語)
         });
 
         try {
