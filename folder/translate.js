@@ -9,7 +9,7 @@ document.getElementById('translateButton').addEventListener('click', async () =>
 
         // DeepL APIを使用してテキストを翻訳
         const apiKey = '7243e3c0-121d-42d3-9383-a3ba2fcd3934:fx';
-        const url = 'api-free.deepl.com';
+        const url = 'https://api.deepl.com/v2/translate';
         const params = new URLSearchParams({
             auth_key: apiKey,
             text: textToTranslate,
