@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michihiro Shioya - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,363 +14,348 @@
         }
 
         :root {
-            --primary-color: #0f172a;
-            --secondary-color: #1e293b;
-            --accent-color: #3b82f6;
-            --accent-hover: #2563eb;
-            --text-light: #e2e8f0;
-            --text-gray: #94a3b8;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            --primary-color: #0969da;
+            --primary-hover: #0550ae;
+            --text-primary: #1f2328;
+            --text-secondary: #636c76;
+            --text-tertiary: #8c959f;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f6f8fa;
+            --bg-tertiary: #eef1f4;
+            --border-color: #d1d9e0;
+            --border-subtle: #e8ecef;
+            --shadow-sm: 0 1px 3px rgba(31, 35, 40, 0.12);
+            --shadow-md: 0 6px 16px rgba(31, 35, 40, 0.12);
+            --shadow-lg: 0 16px 32px rgba(31, 35, 40, 0.12);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--primary-color);
-            color: var(--text-light);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Animated Background */
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-        }
-
-        .background-animation::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -250px;
-            right: -250px;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .background-animation::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: -200px;
-            left: -200px;
-            animation: float 15s infinite ease-in-out reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(50px, 50px) scale(1.1); }
-        }
-
         /* Header Section */
         header {
-            padding: 40px 20px;
-            text-align: center;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-gray);
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 14px;
+            transition: color 0.2s ease;
             position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-2);
-            transition: width 0.3s ease;
-        }
-
         .nav-links a:hover {
-            color: var(--text-light);
+            color: var(--text-primary);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        /* Language Toggle */
+        .language-toggle {
+            display: flex;
+            gap: 8px;
+            margin-left: 16px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
 
         /* Hero Section */
         .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            padding: 120px 24px 100px;
             text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .profile-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 40px;
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
         }
 
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--secondary-color);
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-container::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: var(--gradient-2);
-            border-radius: 50%;
-            z-index: 0;
-            opacity: 0.5;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.05); opacity: 0.7; }
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
+            border: 3px solid var(--border-color);
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-md);
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
 
         .tagline {
-            font-size: 1.3em;
-            color: var(--text-gray);
+            font-size: 1.25em;
+            color: var(--text-secondary);
             margin-bottom: 40px;
-            animation: fadeInUp 1.2s ease;
+            font-weight: 400;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Content Sections */
+        /* Content Container */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 0 24px;
         }
 
+        /* Section Styling */
         .section {
-            margin-bottom: 80px;
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section:last-child {
+            border-bottom: none;
         }
 
         .section-title {
             font-size: 2.5em;
+            font-weight: 700;
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-            font-family: 'Playfair Display', serif;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-2);
-            margin: 20px auto 0;
-            border-radius: 2px;
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125em;
+            color: var(--text-secondary);
+            margin-bottom: 64px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
 
         .card {
-            background: var(--secondary-color);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-primary);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
 
         .card-icon {
-            font-size: 3em;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        }
+
+        .card-icon i {
+            font-size: 1.5em;
+            color: var(--primary-color);
         }
 
         .card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: var(--text-light);
+            font-size: 1.25em;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         .card p {
-            color: var(--text-gray);
-            line-height: 1.8;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95em;
         }
 
         /* Skills Section */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
+            margin-top: 48px;
         }
 
         .skill-tag {
-            background: var(--secondary-color);
-            padding: 12px 25px;
-            border-radius: 30px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            padding: 10px 20px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
             font-weight: 500;
+            font-size: 14px;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
         }
 
         .skill-tag:hover {
-            border-color: var(--accent-color);
-            background: rgba(59, 130, 246, 0.1);
-            transform: scale(1.05);
+            background: var(--bg-primary);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
         }
 
         /* Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-card {
-            background: var(--secondary-color);
-            padding: 30px;
-            border-radius: 20px;
+            background: var(--bg-primary);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
             text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            transition: all 0.2s ease;
         }
 
         .contact-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
 
         .contact-card a {
-            color: var(--text-light);
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .contact-card i {
-            font-size: 2.5em;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2em;
+            color: var(--primary-color);
         }
 
         .contact-card span {
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.05em;
         }
 
         /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
+            gap: 16px;
+            margin-top: 48px;
         }
 
         .social-icon {
-            width: 60px;
-            height: 60px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: var(--secondary-color);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-light);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-size: 1.5em;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-size: 1.2em;
+            transition: all 0.2s ease;
         }
 
         .social-icon:hover {
-            background: var(--gradient-2);
-            transform: translateY(-5px) scale(1.1);
-            border-color: var(--accent-color);
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(15, 23, 42, 0.5);
-            color: var(--text-gray);
+            padding: 48px 24px;
+            color: var(--text-tertiary);
+            font-size: 14px;
             margin-top: 80px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
             }
 
             .tagline {
@@ -381,13 +366,29 @@
                 font-size: 2em;
             }
 
+            .hero {
+                padding: 80px 24px 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
             .cards-grid {
                 grid-template-columns: 1fr;
             }
 
-            .profile-img {
-                width: 150px;
-                height: 150px;
+            .nav-links {
+                gap: 20px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .language-toggle {
+                margin-left: 0;
             }
         }
 
@@ -395,103 +396,121 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Accessibility */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
-    <div class="background-animation"></div>
-
     <header>
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#interests">Interests</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-container">
+            <a href="#" class="logo">Michihiro Shioya</a>
+            <div style="display: flex; align-items: center;">
+                <nav class="nav-links">
+                    <a href="#about" data-ja="概要" data-en="About">About</a>
+                    <a href="#interests" data-ja="興味" data-en="Interests">Interests</a>
+                    <a href="#skills" data-ja="スキル" data-en="Skills">Skills</a>
+                    <a href="#contact" data-ja="お問い合わせ" data-en="Contact">Contact</a>
+                </nav>
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+        </div>
     </header>
 
     <section class="hero">
-        <div class="profile-container">
+        <div class="hero-container">
             <img src="profile.jpeg" alt="Michihiro Shioya" class="profile-img">
+            <h1>Michihiro Shioya</h1>
+            <p class="tagline" data-ja="IT専門家 | スイマー | 健康愛好家" data-en="Information Technology Professional | Swimmer | Health Enthusiast">IT専門家 | スイマー | 健康愛好家</p>
         </div>
-        <h1>Michihiro Shioya</h1>
-        <p class="tagline">Information Technology Professional | Swimmer | Health Enthusiast</p>
     </section>
 
     <div class="container">
         <!-- About Section -->
         <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-ja="自己紹介" data-en="About Me">自己紹介</h2>
+            <p class="section-subtitle" data-ja="テクノロジーと健康的なライフスタイルを追求する、日本を拠点とするIT業界のプロフェッショナル" data-en="IT professional based in Japan, pursuing technology and a healthy lifestyle">テクノロジーと健康的なライフスタイルを追求する、日本を拠点とするIT業界のプロフェッショナル</p>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3>Profile</h3>
-                    <p>日本を拠点とするIT業界のプロフェッショナル。テクノロジーと健康的なライフスタイルを追求しています。</p>
+                    <h3 data-ja="プロフィール" data-en="Profile">プロフィール</h3>
+                    <p data-ja="日本を拠点とするIT業界のプロフェッショナル。テクノロジーと健康的なライフスタイルを追求しています。" data-en="IT professional based in Japan, pursuing technology and a healthy lifestyle.">日本を拠点とするIT業界のプロフェッショナル。テクノロジーと健康的なライフスタイルを追求しています。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Technology</h3>
-                    <p>情報技術に情熱を注ぎ、常に最新のトレンドとイノベーションをフォローしています。</p>
+                    <h3 data-ja="テクノロジー" data-en="Technology">テクノロジー</h3>
+                    <p data-ja="情報技術に情熱を注ぎ、常に最新のトレンドとイノベーションをフォローしています。" data-en="Passionate about information technology, always following the latest trends and innovations.">情報技術に情熱を注ぎ、常に最新のトレンドとイノベーションをフォローしています。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Lifestyle</h3>
-                    <p>健康を大切にし、水泳を通じて心身のバランスを保っています。</p>
+                    <h3 data-ja="ライフスタイル" data-en="Lifestyle">ライフスタイル</h3>
+                    <p data-ja="健康を大切にし、水泳を通じて心身のバランスを保っています。" data-en="Valuing health and maintaining physical and mental balance through swimming.">健康を大切にし、水泳を通じて心身のバランスを保っています。</p>
                 </div>
             </div>
         </section>
 
         <!-- Interests Section -->
         <section id="interests" class="section">
-            <h2 class="section-title">Interests</h2>
+            <h2 class="section-title" data-ja="興味・関心" data-en="Interests">興味・関心</h2>
+            <p class="section-subtitle" data-ja="私の情熱とライフスタイル" data-en="My passions and lifestyle">私の情熱とライフスタイル</p>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-swimmer"></i>
                     </div>
-                    <h3>Swimming</h3>
-                    <p>水泳を愛好し、定期的にトレーニングを行っています。水中での運動は心身をリフレッシュさせます。</p>
+                    <h3 data-ja="水泳" data-en="Swimming">水泳</h3>
+                    <p data-ja="水泳を愛好し、定期的にトレーニングを行っています。水中での運動は心身をリフレッシュさせます。" data-en="Passionate about swimming with regular training. Water exercise refreshes both body and mind.">水泳を愛好し、定期的にトレーニングを行っています。水中での運動は心身をリフレッシュさせます。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h3>Health & Wellness</h3>
-                    <p>健康的なライフスタイルを追求し、ウェルネスに関する知識を深めています。</p>
+                    <h3 data-ja="健康とウェルネス" data-en="Health & Wellness">健康とウェルネス</h3>
+                    <p data-ja="健康的なライフスタイルを追求し、ウェルネスに関する知識を深めています。" data-en="Pursuing a healthy lifestyle and deepening knowledge about wellness.">健康的なライフスタイルを追求し、ウェルネスに関する知識を深めています。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Technology</h3>
-                    <p>最新のIT技術やデジタルイノベーションに強い関心を持っています。</p>
+                    <h3 data-ja="テクノロジー" data-en="Technology">テクノロジー</h3>
+                    <p data-ja="最新のIT技術やデジタルイノベーションに強い関心を持っています。" data-en="Strong interest in the latest IT technologies and digital innovations.">最新のIT技術やデジタルイノベーションに強い関心を持っています。</p>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="section">
-            <h2 class="section-title">Skills & Expertise</h2>
+            <h2 class="section-title" data-ja="スキルと専門知識" data-en="Skills & Expertise">スキルと専門知識</h2>
+            <p class="section-subtitle" data-ja="私の専門分野と能力" data-en="My areas of expertise and capabilities">私の専門分野と能力</p>
             <div class="skills-container">
-                <span class="skill-tag">Information Technology</span>
-                <span class="skill-tag">Web Development</span>
-                <span class="skill-tag">Digital Innovation</span>
-                <span class="skill-tag">Health & Fitness</span>
-                <span class="skill-tag">Swimming</span>
-                <span class="skill-tag">Japanese</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">Continuous Learning</span>
+                <span class="skill-tag" data-ja="情報技術" data-en="Information Technology">情報技術</span>
+                <span class="skill-tag" data-ja="Web開発" data-en="Web Development">Web開発</span>
+                <span class="skill-tag" data-ja="デジタルイノベーション" data-en="Digital Innovation">デジタルイノベーション</span>
+                <span class="skill-tag" data-ja="健康とフィットネス" data-en="Health & Fitness">健康とフィットネス</span>
+                <span class="skill-tag" data-ja="水泳" data-en="Swimming">水泳</span>
+                <span class="skill-tag" data-ja="日本語" data-en="Japanese">日本語</span>
+                <span class="skill-tag" data-ja="問題解決" data-en="Problem Solving">問題解決</span>
+                <span class="skill-tag" data-ja="継続的学習" data-en="Continuous Learning">継続的学習</span>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-ja="お問い合わせ" data-en="Get In Touch">お問い合わせ</h2>
+            <p class="section-subtitle" data-ja="お気軽にご連絡ください" data-en="Feel free to reach out to me">お気軽にご連絡ください</p>
             <div class="contact-grid">
                 <div class="contact-card">
                     <a href="https://github.com/shioyam" target="_blank" rel="noopener">
@@ -508,16 +527,16 @@
             </div>
 
             <div class="social-links">
-                <a href="https://twitter.com/michishioya" target="_blank" rel="noopener" class="social-icon">
+                <a href="https://twitter.com/michishioya" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://facebook.com/shioyam" target="_blank" rel="noopener" class="social-icon">
+                <a href="https://facebook.com/shioyam" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://instagram.com/oyaji_ms" target="_blank" rel="noopener" class="social-icon">
+                <a href="https://instagram.com/oyaji_ms" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.threads.net/@oyaji_ms" target="_blank" rel="noopener" class="social-icon">
+                <a href="https://www.threads.net/@oyaji_ms" target="_blank" rel="noopener" class="social-icon" aria-label="Threads">
                     <i class="fab fa-threads"></i>
                 </a>
             </div>
@@ -525,7 +544,62 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Michihiro Shioya. All rights reserved.</p>
+        <p data-ja="&copy; 2024 Michihiro Shioya. All rights reserved." data-en="&copy; 2024 Michihiro Shioya. All rights reserved.">&copy; 2024 Michihiro Shioya. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Language switching functionality
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const elementsWithLang = document.querySelectorAll('[data-ja][data-en]');
+
+        // Get saved language or default to Japanese
+        let currentLang = localStorage.getItem('preferredLanguage') || 'ja';
+
+        // Initialize page with saved language
+        function initLanguage() {
+            updateLanguage(currentLang);
+            updateActiveButton(currentLang);
+        }
+
+        // Update all text content based on language
+        function updateLanguage(lang) {
+            elementsWithLang.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            currentLang = lang;
+        }
+
+        // Update active button state
+        function updateActiveButton(lang) {
+            langButtons.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Add click event listeners to language buttons
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLang = button.dataset.lang;
+                updateLanguage(selectedLang);
+                updateActiveButton(selectedLang);
+            });
+        });
+
+        // Initialize on page load
+        initLanguage();
+    </script>
 </body>
 </html>
