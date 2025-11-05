@@ -395,17 +395,73 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--secondary-color);
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-gray);
+            font-size: 1em;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-light);
+        }
+
+        .lang-btn.active {
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+
+            .lang-btn {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="background-animation"></div>
 
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
     <header>
         <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#interests">Interests</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" data-ja="概要" data-en="About">About</a>
+            <a href="#interests" data-ja="興味" data-en="Interests">Interests</a>
+            <a href="#skills" data-ja="スキル" data-en="Skills">Skills</a>
+            <a href="#contact" data-ja="お問い合わせ" data-en="Contact">Contact</a>
         </nav>
     </header>
 
@@ -414,84 +470,84 @@
             <img src="profile.jpeg" alt="Michihiro Shioya" class="profile-img">
         </div>
         <h1>Michihiro Shioya</h1>
-        <p class="tagline">Information Technology Professional | Swimmer | Health Enthusiast</p>
+        <p class="tagline" data-ja="IT専門家 | スイマー | 健康愛好家" data-en="Information Technology Professional | Swimmer | Health Enthusiast">Information Technology Professional | Swimmer | Health Enthusiast</p>
     </section>
 
     <div class="container">
         <!-- About Section -->
         <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-ja="自己紹介" data-en="About Me">About Me</h2>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3>Profile</h3>
-                    <p>日本を拠点とするIT業界のプロフェッショナル。テクノロジーと健康的なライフスタイルを追求しています。</p>
+                    <h3 data-ja="プロフィール" data-en="Profile">Profile</h3>
+                    <p data-ja="日本を拠点とするIT業界のプロフェッショナル。テクノロジーと健康的なライフスタイルを追求しています。" data-en="IT professional based in Japan, pursuing technology and a healthy lifestyle.">日本を拠点とするIT業界のプロフェッショナル。テクノロジーと健康的なライフスタイルを追求しています。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Technology</h3>
-                    <p>情報技術に情熱を注ぎ、常に最新のトレンドとイノベーションをフォローしています。</p>
+                    <h3 data-ja="テクノロジー" data-en="Technology">Technology</h3>
+                    <p data-ja="情報技術に情熱を注ぎ、常に最新のトレンドとイノベーションをフォローしています。" data-en="Passionate about information technology, always following the latest trends and innovations.">情報技術に情熱を注ぎ、常に最新のトレンドとイノベーションをフォローしています。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Lifestyle</h3>
-                    <p>健康を大切にし、水泳を通じて心身のバランスを保っています。</p>
+                    <h3 data-ja="ライフスタイル" data-en="Lifestyle">Lifestyle</h3>
+                    <p data-ja="健康を大切にし、水泳を通じて心身のバランスを保っています。" data-en="Valuing health and maintaining physical and mental balance through swimming.">健康を大切にし、水泳を通じて心身のバランスを保っています。</p>
                 </div>
             </div>
         </section>
 
         <!-- Interests Section -->
         <section id="interests" class="section">
-            <h2 class="section-title">Interests</h2>
+            <h2 class="section-title" data-ja="興味・関心" data-en="Interests">Interests</h2>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-swimmer"></i>
                     </div>
-                    <h3>Swimming</h3>
-                    <p>水泳を愛好し、定期的にトレーニングを行っています。水中での運動は心身をリフレッシュさせます。</p>
+                    <h3 data-ja="水泳" data-en="Swimming">Swimming</h3>
+                    <p data-ja="水泳を愛好し、定期的にトレーニングを行っています。水中での運動は心身をリフレッシュさせます。" data-en="Passionate about swimming with regular training. Water exercise refreshes both body and mind.">水泳を愛好し、定期的にトレーニングを行っています。水中での運動は心身をリフレッシュさせます。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h3>Health & Wellness</h3>
-                    <p>健康的なライフスタイルを追求し、ウェルネスに関する知識を深めています。</p>
+                    <h3 data-ja="健康とウェルネス" data-en="Health & Wellness">Health & Wellness</h3>
+                    <p data-ja="健康的なライフスタイルを追求し、ウェルネスに関する知識を深めています。" data-en="Pursuing a healthy lifestyle and deepening knowledge about wellness.">健康的なライフスタイルを追求し、ウェルネスに関する知識を深めています。</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Technology</h3>
-                    <p>最新のIT技術やデジタルイノベーションに強い関心を持っています。</p>
+                    <h3 data-ja="テクノロジー" data-en="Technology">Technology</h3>
+                    <p data-ja="最新のIT技術やデジタルイノベーションに強い関心を持っています。" data-en="Strong interest in the latest IT technologies and digital innovations.">最新のIT技術やデジタルイノベーションに強い関心を持っています。</p>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="section">
-            <h2 class="section-title">Skills & Expertise</h2>
+            <h2 class="section-title" data-ja="スキルと専門知識" data-en="Skills & Expertise">Skills & Expertise</h2>
             <div class="skills-container">
-                <span class="skill-tag">Information Technology</span>
-                <span class="skill-tag">Web Development</span>
-                <span class="skill-tag">Digital Innovation</span>
-                <span class="skill-tag">Health & Fitness</span>
-                <span class="skill-tag">Swimming</span>
-                <span class="skill-tag">Japanese</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">Continuous Learning</span>
+                <span class="skill-tag" data-ja="情報技術" data-en="Information Technology">Information Technology</span>
+                <span class="skill-tag" data-ja="Web開発" data-en="Web Development">Web Development</span>
+                <span class="skill-tag" data-ja="デジタルイノベーション" data-en="Digital Innovation">Digital Innovation</span>
+                <span class="skill-tag" data-ja="健康とフィットネス" data-en="Health & Fitness">Health & Fitness</span>
+                <span class="skill-tag" data-ja="水泳" data-en="Swimming">Swimming</span>
+                <span class="skill-tag" data-ja="日本語" data-en="Japanese">Japanese</span>
+                <span class="skill-tag" data-ja="問題解決" data-en="Problem Solving">Problem Solving</span>
+                <span class="skill-tag" data-ja="継続的学習" data-en="Continuous Learning">Continuous Learning</span>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-ja="お問い合わせ" data-en="Get In Touch">Get In Touch</h2>
             <div class="contact-grid">
                 <div class="contact-card">
                     <a href="https://github.com/shioyam" target="_blank" rel="noopener">
@@ -525,7 +581,62 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Michihiro Shioya. All rights reserved.</p>
+        <p data-ja="&copy; 2024 Michihiro Shioya. All rights reserved." data-en="&copy; 2024 Michihiro Shioya. All rights reserved.">&copy; 2024 Michihiro Shioya. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Language switching functionality
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const elementsWithLang = document.querySelectorAll('[data-ja][data-en]');
+
+        // Get saved language or default to Japanese
+        let currentLang = localStorage.getItem('preferredLanguage') || 'ja';
+
+        // Initialize page with saved language
+        function initLanguage() {
+            updateLanguage(currentLang);
+            updateActiveButton(currentLang);
+        }
+
+        // Update all text content based on language
+        function updateLanguage(lang) {
+            elementsWithLang.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            currentLang = lang;
+        }
+
+        // Update active button state
+        function updateActiveButton(lang) {
+            langButtons.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Add click event listeners to language buttons
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLang = button.dataset.lang;
+                updateLanguage(selectedLang);
+                updateActiveButton(selectedLang);
+            });
+        });
+
+        // Initialize on page load
+        initLanguage();
+    </script>
 </body>
 </html>
