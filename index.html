@@ -296,6 +296,119 @@
             50% { transform: translateX(-50%) translateY(12px); }
         }
 
+        /* Philosophy Section */
+        .philosophy-section {
+            background: var(--bg-secondary);
+            padding: 80px 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .philosophy-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy-intro {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .philosophy-statement {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .philosophy-content {
+            font-size: 1.05em;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 32px;
+        }
+
+        .philosophy-list {
+            margin: 24px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .philosophy-list li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .philosophy-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .philosophy-heading {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .philosophy-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .philosophy-box {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .philosophy-box h4 {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .philosophy-conclusion {
+            font-size: 1.05em;
+            color: var(--text-primary);
+            margin-top: 32px;
+            padding: 20px;
+            background: white;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-comparison {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .philosophy-intro {
+                font-size: 1.15em;
+            }
+
+            .philosophy-statement {
+                font-size: 1.05em;
+            }
+
+            .philosophy-content {
+                font-size: 1em;
+            }
+        }
+
         /* Content Container */
         .container {
             max-width: 1280px;
@@ -624,6 +737,7 @@
             </a>
             <div style="display: flex; align-items: center;">
                 <nav class="nav-links">
+                    <a href="#philosophy" data-ja="哲学" data-en="Philosophy">哲学</a>
                     <a href="#about" data-ja="概要" data-en="About">概要</a>
                     <a href="#interests" data-ja="興味" data-en="Interests">興味</a>
                     <a href="#skills" data-ja="スキル" data-en="Skills">スキル</a>
@@ -648,6 +762,54 @@
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy-section">
+        <div class="philosophy-container">
+            <h2 class="philosophy-intro" data-ja="私はどのような人間か" data-en="Who I Am">私はどのような人間か</h2>
+
+            <p class="philosophy-statement" data-ja="簡潔に言うと、私は「システムを理解する人間」です。" data-en="Simply put, I am someone who understands systems.">簡潔に言うと、私は「システムを理解する人間」です。</p>
+
+            <p class="philosophy-content" data-ja="組織、テクノロジー、人間関係。あらゆるシステムの「論理」と「矛盾」を見抜きます。その見抜く過程で、私は行動します。" data-en="Organizations, technology, human relationships. I identify the 'logic' and 'contradictions' in all systems. In the process of identification, I take action.">組織、テクノロジー、人間関係。あらゆるシステムの「論理」と「矛盾」を見抜きます。その見抜く過程で、私は行動します。</p>
+
+            <h3 class="philosophy-heading" data-ja="重視すること" data-en="What I Value">重視すること</h3>
+            <ul class="philosophy-list">
+                <li data-ja="透明性（見せかけではない、実質的な）" data-en="Transparency (Substantial, not superficial)">透明性（見せかけではない、実質的な）</li>
+                <li data-ja="倫理的一貫性（言ったことと実際の行動が一致）" data-en="Ethical consistency (Words match actions)">倫理的一貫性（言ったことと実際の行動が一致）</li>
+                <li data-ja="機能性（余分なものがない、最適化された）" data-en="Functionality (No excess, optimized)">機能性（余分なものがない、最適化された）</li>
+            </ul>
+
+            <h3 class="philosophy-heading" data-ja="重視しないこと" data-en="What I Don't Value">重視しないこと</h3>
+            <ul class="philosophy-list">
+                <li data-ja="社会的地位や肩書" data-en="Social status or titles">社会的地位や肩書</li>
+                <li data-ja="ブランドや見た目" data-en="Brands or appearances">ブランドや見た目</li>
+                <li data-ja="一般的な「常識」や「空気を読む」" data-en="Common 'sense' or 'reading the room'">一般的な「常識」や「空気を読む」</li>
+            </ul>
+
+            <p class="philosophy-content" data-ja="だから、付き合いやすい側面と、付き合いにくい側面があります。" data-en="Therefore, there are both easy and difficult aspects to working with me.">だから、付き合いやすい側面と、付き合いにくい側面があります。</p>
+
+            <div class="philosophy-comparison">
+                <div class="philosophy-box">
+                    <h4 data-ja="付き合いやすい" data-en="Easy to Work With">付き合いやすい</h4>
+                    <ul class="philosophy-list">
+                        <li data-ja="論理的な対話ができる" data-en="Logical dialogue">論理的な対話ができる</li>
+                        <li data-ja="信頼できる" data-en="Trustworthy">信頼できる</li>
+                        <li data-ja="約束を守る" data-en="Keeps promises">約束を守る</li>
+                    </ul>
+                </div>
+                <div class="philosophy-box">
+                    <h4 data-ja="付き合いにくい" data-en="Difficult to Work With">付き合いにくい</h4>
+                    <ul class="philosophy-list">
+                        <li data-ja="曖昧さを許さない" data-en="No tolerance for ambiguity">曖昧さを許さない</li>
+                        <li data-ja="矛盾を指摘する" data-en="Points out contradictions">矛盾を指摘する</li>
+                        <li data-ja="社会的な「建前」に従わない" data-en="Doesn't follow social facades">社会的な「建前」に従わない</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="philosophy-conclusion" data-ja="もし、あなたが「実質的で透明性のある関係」を求めるなら、私たちは良い関係が築けるかもしれません。" data-en="If you seek a 'substantial and transparent relationship,' we may build a good relationship together.">もし、あなたが「実質的で透明性のある関係」を求めるなら、私たちは良い関係が築けるかもしれません。</div>
         </div>
     </section>
 
