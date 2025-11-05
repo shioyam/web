@@ -203,7 +203,7 @@
         /* Hero Section - Minimalist Design */
         .hero {
             background: var(--bg-primary);
-            padding: 100px 24px 100px;
+            padding: 100px 24px 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -271,10 +271,69 @@
         .tagline {
             font-size: 1.15em;
             color: var(--text-secondary);
-            margin-bottom: 0;
+            margin-bottom: 60px;
             font-weight: 400;
             line-height: 1.8;
             animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        /* Core Values - Integrated into Hero */
+        .core-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .values-column h3 {
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .values-list li {
+            padding: 12px 0;
+            color: var(--text-primary);
+            font-size: 0.95em;
+            line-height: 1.6;
+            text-align: center;
+            position: relative;
+        }
+
+        .values-list li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .values-list li:last-child::after {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .core-values {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                margin-bottom: 40px;
+            }
         }
 
         /* Scroll Indicator */
@@ -294,119 +353,6 @@
         @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
             50% { transform: translateX(-50%) translateY(12px); }
-        }
-
-        /* Philosophy Section */
-        .philosophy-section {
-            background: var(--bg-secondary);
-            padding: 80px 24px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .philosophy-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .philosophy-intro {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .philosophy-statement {
-            font-size: 1.15em;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
-
-        .philosophy-content {
-            font-size: 1.05em;
-            color: var(--text-secondary);
-            line-height: 1.9;
-            margin-bottom: 32px;
-        }
-
-        .philosophy-list {
-            margin: 24px 0;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .philosophy-list li {
-            padding: 12px 0 12px 32px;
-            position: relative;
-            line-height: 1.8;
-        }
-
-        .philosophy-list li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .philosophy-heading {
-            font-size: 1.1em;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .philosophy-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .philosophy-box {
-            background: white;
-            padding: 24px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .philosophy-box h4 {
-            font-size: 1.05em;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .philosophy-conclusion {
-            font-size: 1.05em;
-            color: var(--text-primary);
-            margin-top: 32px;
-            padding: 20px;
-            background: white;
-            border-left: 4px solid var(--primary-color);
-            border-radius: 4px;
-        }
-
-        @media (max-width: 768px) {
-            .philosophy-comparison {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .philosophy-intro {
-                font-size: 1.15em;
-            }
-
-            .philosophy-statement {
-                font-size: 1.05em;
-            }
-
-            .philosophy-content {
-                font-size: 1em;
-            }
         }
 
         /* Content Container */
@@ -737,7 +683,6 @@
             </a>
             <div style="display: flex; align-items: center;">
                 <nav class="nav-links">
-                    <a href="#philosophy" data-ja="哲学" data-en="Philosophy">哲学</a>
                     <a href="#about" data-ja="概要" data-en="About">概要</a>
                     <a href="#interests" data-ja="興味" data-en="Interests">興味</a>
                     <a href="#skills" data-ja="スキル" data-en="Skills">スキル</a>
@@ -759,28 +704,29 @@
             </div>
             <h1>Michihiro Shioya</h1>
             <p class="tagline" data-ja="形式より実質を重んじる | IT専門家 | 水泳愛好家" data-en="Essence over Form | IT Professional | Swimming Enthusiast">形式より実質を重んじる | IT専門家 | 水泳愛好家</p>
+
+            <!-- Core Values - Integrated -->
+            <div class="core-values">
+                <div class="values-column">
+                    <h3 data-ja="重視すること" data-en="What I Value">重視すること</h3>
+                    <ul class="values-list">
+                        <li data-ja="透明性（実質的な）" data-en="Transparency (Substantial)">透明性（実質的な）</li>
+                        <li data-ja="倫理的一貫性" data-en="Ethical Consistency">倫理的一貫性</li>
+                        <li data-ja="機能性（最適化された）" data-en="Functionality (Optimized)">機能性（最適化された）</li>
+                    </ul>
+                </div>
+                <div class="values-column">
+                    <h3 data-ja="重視しないこと" data-en="What I Don't Value">重視しないこと</h3>
+                    <ul class="values-list">
+                        <li data-ja="社会的地位や肩書" data-en="Social Status or Titles">社会的地位や肩書</li>
+                        <li data-ja="ブランドや見た目" data-en="Brands or Appearances">ブランドや見た目</li>
+                        <li data-ja="「常識」や「空気を読む」" data-en="'Common Sense' or 'Reading the Room'">「常識」や「空気を読む」</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section id="philosophy" class="philosophy-section">
-        <div class="philosophy-container">
-            <h3 class="philosophy-heading" data-ja="重視すること" data-en="What I Value">重視すること</h3>
-            <ul class="philosophy-list">
-                <li data-ja="透明性（見せかけではない、実質的な）" data-en="Transparency (Substantial, not superficial)">透明性（見せかけではない、実質的な）</li>
-                <li data-ja="倫理的一貫性（言ったことと実際の行動が一致）" data-en="Ethical consistency (Words match actions)">倫理的一貫性（言ったことと実際の行動が一致）</li>
-                <li data-ja="機能性（余分なものがない、最適化された）" data-en="Functionality (No excess, optimized)">機能性（余分なものがない、最適化された）</li>
-            </ul>
-
-            <h3 class="philosophy-heading" data-ja="重視しないこと" data-en="What I Don't Value">重視しないこと</h3>
-            <ul class="philosophy-list">
-                <li data-ja="社会的地位や肩書" data-en="Social status or titles">社会的地位や肩書</li>
-                <li data-ja="ブランドや見た目" data-en="Brands or appearances">ブランドや見た目</li>
-                <li data-ja="一般的な「常識」や「空気を読む」" data-en="Common 'sense' or 'reading the room'">一般的な「常識」や「空気を読む」</li>
-            </ul>
         </div>
     </section>
 
