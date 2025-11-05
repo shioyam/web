@@ -14,30 +14,31 @@
         }
 
         :root {
-            /* Spring Type Personal Colors - Deep Green Centered for Sharp Contrast */
-            --primary-color: #2E7D32;  /* Deep Green - Much darker */
-            --primary-hover: #1B5E20;  /* Very Dark Green */
-            --secondary-color: #43A047; /* Medium-Dark Green */
-            --accent-color: #00897B;   /* Deep Teal - Darker */
-            --green-light: #66BB6A;    /* Light Green for accents */
-            --green-fresh: #388E3C;    /* Forest Green */
-            --yellow-accent: #F9A825;  /* Dark Amber - Stronger */
-            --coral-accent: #E64A19;   /* Deep Orange-Red */
-            --text-primary: #1B3A1B;   /* Very Dark Forest Green - Almost Black */
-            --text-secondary: #2C4A2C; /* Dark Forest Green */
+            /* Business Professional Spring Colors - Teal & Gold */
+            --primary-color: #008B8B;  /* Dark Cyan/Teal - Professional */
+            --primary-hover: #006B6B;  /* Darker Teal */
+            --secondary-color: #20B2AA; /* Light Sea Green */
+            --accent-color: #DAA520;   /* Goldenrod - Professional Gold */
+            --accent-dark: #B8860B;    /* Dark Goldenrod */
+            --teal-light: #48D1CC;     /* Medium Turquoise */
+            --teal-dark: #005F5F;      /* Very Dark Teal */
+            --gold-light: #F0E68C;     /* Khaki - Light Gold */
+            --bronze: #CD7F32;         /* Bronze accent */
+            --text-primary: #2F4F4F;   /* Dark Slate Gray - Professional */
+            --text-secondary: #4A6363; /* Slate Gray */
             --text-light: #ffffff;
             --bg-primary: #ffffff;
-            --bg-secondary: #F1F8F4;   /* Very subtle green tint */
-            --bg-tertiary: #E8F5E9;    /* Light green background */
-            --bg-dark: #1B5E20;        /* Very Dark Green for footer */
-            --gold-accent: #F57F17;    /* Dark Gold */
+            --bg-secondary: #F5FAFA;   /* Very light teal tint */
+            --bg-tertiary: #EBF5F5;    /* Light teal background */
+            --bg-dark: #004D4D;        /* Very Dark Teal for footer */
+            --gold-accent: #B8860B;    /* Dark Gold */
 
-            /* Spring Gradients - Deep Green Centered with High Contrast */
-            --gradient-1: linear-gradient(135deg, #2E7D32 0%, #388E3C 50%, #43A047 100%); /* Deep green spectrum */
-            --gradient-2: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); /* Very deep green */
-            --gradient-3: linear-gradient(135deg, #00897B 0%, #26A69A 100%); /* Deep teal gradient */
-            --gradient-4: linear-gradient(135deg, #2E7D32 0%, #00897B 100%); /* Deep green to teal */
-            --gradient-hero: linear-gradient(135deg, #1B5E20 0%, #2E7D32 25%, #43A047 50%, #F9A825 65%, #00897B 100%); /* Dark green dominant */
+            /* Business Professional Gradients - Teal & Gold */
+            --gradient-1: linear-gradient(135deg, #008B8B 0%, #20B2AA 50%, #48D1CC 100%); /* Teal spectrum */
+            --gradient-2: linear-gradient(135deg, #006B6B 0%, #008B8B 100%); /* Deep teal */
+            --gradient-3: linear-gradient(135deg, #DAA520 0%, #F0E68C 100%); /* Gold gradient */
+            --gradient-4: linear-gradient(135deg, #008B8B 0%, #DAA520 100%); /* Teal to Gold */
+            --gradient-hero: linear-gradient(135deg, #006B6B 0%, #008B8B 25%, #20B2AA 50%, #DAA520 70%, #48D1CC 100%); /* Professional blend */
         }
 
         body {
@@ -56,7 +57,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(135deg, #2E7D32 0%, #43A047 100%);
+            background: linear-gradient(135deg, #008B8B 0%, #20B2AA 100%);
             opacity: 0.05;
         }
 
@@ -65,7 +66,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(46, 125, 50, 0.4) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 139, 139, 0.4) 0%, transparent 70%);
             border-radius: 50%;
             top: -300px;
             right: -300px;
@@ -77,7 +78,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(249, 168, 37, 0.35) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(218, 165, 32, 0.35) 0%, transparent 70%);
             border-radius: 50%;
             bottom: -250px;
             left: -250px;
@@ -93,7 +94,7 @@
         header {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 3px solid rgba(46, 125, 50, 0.4);
+            border-bottom: 3px solid rgba(0, 139, 139, 0.4);
             padding: 20px 0;
             position: sticky;
             top: 0;
@@ -177,10 +178,10 @@
             display: flex;
             gap: 8px;
             margin-left: 16px;
-            background: rgba(46, 125, 50, 0.12);
+            background: rgba(0, 139, 139, 0.12);
             padding: 4px;
             border-radius: 12px;
-            border: 2px solid rgba(46, 125, 50, 0.3);
+            border: 2px solid rgba(0, 139, 139, 0.3);
         }
 
         .lang-btn {
@@ -204,7 +205,7 @@
         .lang-btn.active {
             background: var(--primary-color);
             color: white;
-            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 139, 139, 0.6);
         }
 
         /* Hero Section */
@@ -349,7 +350,7 @@
             text-align: center;
             margin-bottom: 20px;
             color: var(--primary-color);
-            text-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+            text-shadow: 0 2px 8px rgba(0, 139, 139, 0.2);
             letter-spacing: -0.01em;
             text-transform: uppercase;
             animation: fadeInUp 0.8s ease;
@@ -383,7 +384,7 @@
             border-radius: 24px;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 3px solid rgba(46, 125, 50, 0.3);
+            border: 3px solid rgba(0, 139, 139, 0.3);
             position: relative;
             overflow: hidden;
             animation: fadeInUp 0.8s ease;
@@ -408,7 +409,7 @@
 
         .card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(46, 125, 50, 0.45);
+            box-shadow: 0 25px 60px rgba(0, 139, 139, 0.45);
             border-color: var(--primary-color);
         }
 
@@ -427,8 +428,8 @@
             justify-content: center;
             margin-bottom: 24px;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.55);
-            border: 2px solid rgba(46, 125, 50, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 139, 139, 0.55);
+            border: 2px solid rgba(0, 139, 139, 0.2);
         }
 
         .card:hover .card-icon {
@@ -468,7 +469,7 @@
             background: white;
             padding: 14px 28px;
             border-radius: 30px;
-            border: 3px solid rgba(46, 125, 50, 0.4);
+            border: 3px solid rgba(0, 139, 139, 0.4);
             font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
             font-weight: 700;
             font-size: 15px;
@@ -500,7 +501,7 @@
         .skill-tag:hover {
             color: white;
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(46, 125, 50, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 139, 139, 0.5);
             border-color: var(--primary-color);
         }
 
