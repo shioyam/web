@@ -217,23 +217,26 @@
             z-index: 1;
         }
 
-        /* Hero Logo - Philosophy Symbol */
-        .hero-logo {
-            width: 500px;
-            height: 500px;
+        /* Hero Photo - Profile Picture */
+        .hero-photo {
+            width: 280px;
+            height: 280px;
             margin: 0 auto 36px;
             animation: fadeInScale 1s ease;
         }
 
-        .hero-logo img {
+        .hero-photo img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             transition: all 0.5s ease;
         }
 
-        .hero-logo:hover img {
-            transform: rotate(180deg);
+        .hero-photo:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes fadeInScale {
@@ -280,12 +283,13 @@
         /* Core Values - Integrated into Hero */
         .core-values {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr auto 1fr;
             gap: 40px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto 60px;
             padding: 0 24px;
             animation: fadeInUp 1s ease 0.4s both;
+            align-items: center;
         }
 
         .values-column h3 {
@@ -328,11 +332,43 @@
             display: none;
         }
 
+        /* Philosophy Logo in Values Section */
+        .values-logo {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .values-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: all 0.5s ease;
+        }
+
+        .values-logo:hover img {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .core-values {
                 grid-template-columns: 1fr;
                 gap: 32px;
                 margin-bottom: 40px;
+            }
+
+            .hero-photo {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 28px;
+            }
+
+            .values-logo {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
             }
         }
 
@@ -611,12 +647,6 @@
                 padding: 60px 24px 60px;
             }
 
-            .hero-logo {
-                width: 340px;
-                height: 340px;
-                margin-bottom: 28px;
-            }
-
             h1 {
                 font-size: 2.4em;
             }
@@ -698,14 +728,14 @@
 
     <section class="hero">
         <div class="hero-container">
-            <!-- Philosophy Logo - Center Stage -->
-            <div class="hero-logo">
-                <img src="mage_50hz0f50hz0f50hz.png" alt="Essence over Form - Philosophy Logo">
+            <!-- Profile Photo -->
+            <div class="hero-photo">
+                <img src="profile.jpeg" alt="Michihiro Shioya">
             </div>
             <h1>Michihiro Shioya</h1>
             <p class="tagline" data-ja="形式より実質を重んじる | IT専門家 | 水泳愛好家" data-en="Essence over Form | IT Professional | Swimming Enthusiast">形式より実質を重んじる | IT専門家 | 水泳愛好家</p>
 
-            <!-- Core Values - Integrated -->
+            <!-- Core Values with Philosophy Logo -->
             <div class="core-values">
                 <div class="values-column">
                     <h3 data-ja="重視すること" data-en="What I Value">重視すること</h3>
@@ -714,6 +744,9 @@
                         <li data-ja="倫理的一貫性" data-en="Ethical Consistency">倫理的一貫性</li>
                         <li data-ja="機能性（最適化された）" data-en="Functionality (Optimized)">機能性（最適化された）</li>
                     </ul>
+                </div>
+                <div class="values-logo">
+                    <img src="mage_50hz0f50hz0f50hz.png" alt="Essence over Form - Philosophy Logo">
                 </div>
                 <div class="values-column">
                     <h3 data-ja="重視しないこと" data-en="What I Don't Value">重視しないこと</h3>
