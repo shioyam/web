@@ -86,14 +86,14 @@
 
         /* Header Section */
         header {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(0, 0, 0, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
             padding: 24px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             animation: slideDown 0.5s ease;
         }
 
@@ -122,7 +122,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            color: var(--text-primary);
+            color: var(--text-light);
             letter-spacing: -0.01em;
         }
 
@@ -137,7 +137,7 @@
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
@@ -152,13 +152,13 @@
             left: 0;
             width: 0;
             height: 4px;
-            background: var(--primary-color);
+            background: var(--text-light);
             transition: width 0.3s ease;
             border-radius: 2px;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--text-light);
         }
 
         .nav-links a:hover::after {
@@ -170,16 +170,16 @@
             display: flex;
             gap: 4px;
             margin-left: 20px;
-            background: var(--bg-tertiary);
+            background: rgba(255, 255, 255, 0.1);
             padding: 4px;
             border-radius: 8px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .lang-btn {
             background: transparent;
             border: none;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 13px;
             font-weight: 600;
             padding: 8px 16px;
@@ -190,24 +190,24 @@
         }
 
         .lang-btn:hover {
-            color: var(--text-primary);
-            background: rgba(0, 0, 0, 0.05);
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .lang-btn.active {
-            background: var(--primary-color);
-            color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            background: var(--text-light);
+            color: var(--bg-dark);
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
         }
 
         /* Hero Section - Minimalist Design */
         .hero {
-            background: var(--bg-primary);
+            background: var(--bg-dark);
             padding: 100px 24px 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-container {
@@ -252,7 +252,7 @@
             font-size: 3.2em;
             font-weight: 600;
             margin-bottom: 20px;
-            color: var(--text-primary);
+            color: var(--text-light);
             letter-spacing: -0.02em;
             animation: fadeInUp 1s ease 0.2s both;
         }
@@ -270,7 +270,7 @@
 
         .tagline {
             font-size: 1.15em;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 60px;
             font-weight: 400;
             line-height: 1.8;
@@ -293,7 +293,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--accent-color);
+            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 20px;
             text-align: center;
         }
@@ -306,7 +306,7 @@
 
         .values-list li {
             padding: 12px 0;
-            color: var(--text-primary);
+            color: var(--text-light);
             font-size: 0.95em;
             line-height: 1.6;
             text-align: center;
@@ -321,7 +321,7 @@
             transform: translateX(-50%);
             width: 40px;
             height: 1px;
-            background: var(--border-color);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .values-list li:last-child::after {
@@ -347,7 +347,7 @@
 
         .scroll-indicator i {
             font-size: 1.5em;
-            color: var(--accent-color);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         @keyframes bounce {
