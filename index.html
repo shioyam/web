@@ -15,29 +15,29 @@
 
         :root {
             /* Spring Type Personal Colors - Green Centered with Yellow Accents */
-            --primary-color: #7FD87F;  /* Light Green */
-            --primary-hover: #6BC76B;  /* Medium Green */
-            --secondary-color: #98E698; /* Mint Green */
-            --accent-color: #4FD1C5;   /* Aqua/Turquoise */
-            --green-light: #A8E6A5;    /* Very Light Green */
-            --green-fresh: #5FD35F;    /* Fresh Green */
-            --yellow-accent: #FFD93D;  /* Bright Yellow (accent only) */
-            --coral-accent: #FF9A7A;   /* Soft Coral (accent) */
-            --text-primary: #5D4E37;   /* Warm Brown */
-            --text-secondary: #8B7355; /* Medium Brown */
+            --primary-color: #4CAF50;  /* Vivid Green - More saturated */
+            --primary-hover: #45A049;  /* Darker Green */
+            --secondary-color: #81C784; /* Medium Green - More visible */
+            --accent-color: #00BCD4;   /* Cyan - Stronger contrast */
+            --green-light: #A5D6A7;    /* Light Green */
+            --green-fresh: #66BB6A;    /* Fresh Green - More saturated */
+            --yellow-accent: #FFC107;  /* Amber Yellow - Stronger than previous */
+            --coral-accent: #FF7043;   /* Deep Coral - More visible */
+            --text-primary: #2E3B1F;   /* Very Dark Olive Green - Strong contrast */
+            --text-secondary: #4A5D3A; /* Dark Olive - Better visibility */
             --text-light: #ffffff;
             --bg-primary: #ffffff;
-            --bg-secondary: #F0FAF0;   /* Very light green tint */
-            --bg-tertiary: #E8F5E8;    /* Light green tint */
-            --bg-dark: #5D4E37;        /* Warm Brown */
-            --gold-accent: #DAA520;    /* Yellow Gold */
+            --bg-secondary: #F1F8F4;   /* Very subtle green tint */
+            --bg-tertiary: #E8F5E9;    /* Light green background */
+            --bg-dark: #1B5E20;        /* Dark Green for footer */
+            --gold-accent: #FFB300;    /* Stronger Yellow Gold */
 
-            /* Spring Gradients - Green Centered */
-            --gradient-1: linear-gradient(135deg, #7FD87F 0%, #98E698 50%, #A8E6A5 100%); /* Green spectrum */
-            --gradient-2: linear-gradient(135deg, #5FD35F 0%, #7FD87F 100%); /* Fresh to Light Green */
-            --gradient-3: linear-gradient(135deg, #4FD1C5 0%, #7FDBDA 100%); /* Aqua to Light Turquoise */
-            --gradient-4: linear-gradient(135deg, #7FD87F 0%, #4FD1C5 100%); /* Green to Aqua */
-            --gradient-hero: linear-gradient(135deg, #7FD87F 0%, #98E698 25%, #A8E6A5 50%, #FFD93D 75%, #4FD1C5 100%); /* Green dominant with yellow accent */
+            /* Spring Gradients - Green Centered with High Contrast */
+            --gradient-1: linear-gradient(135deg, #4CAF50 0%, #66BB6A 50%, #81C784 100%); /* Vivid green spectrum */
+            --gradient-2: linear-gradient(135deg, #43A047 0%, #4CAF50 100%); /* Deep to Vivid Green */
+            --gradient-3: linear-gradient(135deg, #00BCD4 0%, #4DD0E1 100%); /* Cyan gradient */
+            --gradient-4: linear-gradient(135deg, #4CAF50 0%, #00BCD4 100%); /* Green to Cyan */
+            --gradient-hero: linear-gradient(135deg, #43A047 0%, #66BB6A 25%, #FFC107 50%, #81C784 75%, #00BCD4 100%); /* High contrast gradient */
         }
 
         body {
@@ -56,8 +56,8 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(135deg, #7FD87F 0%, #A8E6A5 100%);
-            opacity: 0.03;
+            background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+            opacity: 0.04;
         }
 
         .animated-bg::before {
@@ -65,7 +65,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(127, 216, 127, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.35) 0%, transparent 70%);
             border-radius: 50%;
             top: -300px;
             right: -300px;
@@ -77,7 +77,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255, 217, 61, 0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.3) 0%, transparent 70%);
             border-radius: 50%;
             bottom: -250px;
             left: -250px;
@@ -91,14 +91,14 @@
 
         /* Header Section */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 2px solid rgba(76, 175, 80, 0.2);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             animation: slideDown 0.5s ease;
         }
 
@@ -177,9 +177,10 @@
             display: flex;
             gap: 8px;
             margin-left: 16px;
-            background: rgba(127, 216, 127, 0.15);
+            background: rgba(76, 175, 80, 0.15);
             padding: 4px;
             border-radius: 12px;
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .lang-btn {
@@ -203,7 +204,7 @@
         .lang-btn.active {
             background: var(--gradient-1);
             color: white;
-            box-shadow: 0 4px 15px rgba(127, 216, 127, 0.4);
+            box-shadow: 0 3px 12px rgba(76, 175, 80, 0.5);
         }
 
         /* Hero Section */
@@ -377,9 +378,9 @@
             background: white;
             padding: 40px;
             border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid transparent;
+            border: 2px solid rgba(76, 175, 80, 0.2);
             position: relative;
             overflow: hidden;
             animation: fadeInUp 0.8s ease;
@@ -404,7 +405,7 @@
 
         .card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(127, 216, 127, 0.25);
+            box-shadow: 0 20px 50px rgba(76, 175, 80, 0.35);
             border-color: var(--primary-color);
         }
 
@@ -423,7 +424,7 @@
             justify-content: center;
             margin-bottom: 24px;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(127, 216, 127, 0.3);
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.45);
         }
 
         .card:hover .card-icon {
@@ -461,12 +462,12 @@
             background: white;
             padding: 14px 28px;
             border-radius: 30px;
-            border: 2px solid transparent;
+            border: 2px solid rgba(76, 175, 80, 0.3);
             font-weight: 600;
             font-size: 15px;
             color: var(--text-primary);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
@@ -491,7 +492,7 @@
         .skill-tag:hover {
             color: white;
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(127, 216, 127, 0.3);
+            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
             border-color: var(--primary-color);
         }
 
@@ -528,19 +529,21 @@
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
             padding: 40px;
             border-radius: 24px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .contact-card:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         .contact-card a {
@@ -579,9 +582,9 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -589,13 +592,15 @@
             text-decoration: none;
             font-size: 1.5em;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
 
         .social-icon:hover {
             background: white;
             color: var(--primary-color);
             transform: translateY(-10px) rotate(360deg) scale(1.15);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: white;
         }
 
         /* Footer */
