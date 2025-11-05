@@ -94,7 +94,7 @@
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             border-bottom: 3px solid rgba(46, 125, 50, 0.4);
-            padding: 20px 0;
+            padding: 32px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -125,18 +125,18 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.5em;
+            gap: 16px;
+            font-size: 1.8em;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
             transition: all 0.3s ease;
         }
 
@@ -166,7 +166,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 16px;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -195,10 +195,10 @@
         .language-toggle {
             display: flex;
             gap: 8px;
-            margin-left: 16px;
+            margin-left: 20px;
             background: rgba(46, 125, 50, 0.12);
-            padding: 4px;
-            border-radius: 12px;
+            padding: 6px;
+            border-radius: 14px;
             border: 2px solid rgba(46, 125, 50, 0.3);
         }
 
@@ -206,10 +206,10 @@
             background: transparent;
             border: none;
             color: var(--text-secondary);
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 10px 18px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
@@ -641,6 +641,29 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            header {
+                padding: 24px 0;
+            }
+
+            .logo {
+                font-size: 1.4em;
+                gap: 12px;
+            }
+
+            .logo-img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .lang-btn {
+                font-size: 13px;
+                padding: 8px 14px;
+            }
+
             h1 {
                 font-size: 2.5em;
             }
