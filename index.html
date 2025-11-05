@@ -123,18 +123,37 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 1.5em;
             font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            transition: all 0.3s ease;
+        }
+
+        .logo-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .logo:hover {
             transform: scale(1.05);
+        }
+
+        .logo:hover .logo-img {
+            transform: rotate(180deg);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
         }
 
         .nav-links {
@@ -691,7 +710,10 @@
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Michihiro Shioya</a>
+            <a href="#" class="logo">
+                <img src="mage_50hz0f50hz0f50hz.png" alt="Logo - Essence over Form" class="logo-img">
+                <span class="logo-text">Michihiro Shioya</span>
+            </a>
             <div style="display: flex; align-items: center;">
                 <nav class="nav-links">
                     <a href="#about" data-ja="概要" data-en="About">概要</a>
