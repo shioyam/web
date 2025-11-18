@@ -748,7 +748,7 @@
         <div class="hero-container">
             <!-- Profile Video -->
             <div class="hero-photo">
-                <video id="profile-video" src="my-ai-jp.mp4" playsinline controls title="Michihiro Shioya"></video>
+                <video id="profile-video" src="my-ai-jp.mp4" muted playsinline controls title="Michihiro Shioya"></video>
             </div>
             <h1>Michihiro Shioya</h1>
             <p class="tagline" data-ja="形式より実質を重んじる | IT専門家 | 水泳愛好家" data-en="Essence over Form | IT Professional | Swimming Enthusiast">形式より実質を重んじる | IT専門家 | 水泳愛好家</p>
@@ -923,8 +923,8 @@
             const profileVideo = document.getElementById('profile-video');
             if (profileVideo) {
                 const videoSrc = lang === 'ja' ? 'my-ai-jp.mp4' : 'my-ai-en.mp4';
-                const wasPlaying = !profileVideo.paused;
                 profileVideo.src = videoSrc;
+                profileVideo.muted = true; // Reset to muted state
                 profileVideo.load(); // Reload the video with new source
                 // Don't auto-play after language switch
             }
@@ -963,10 +963,17 @@
         // Video click-to-play functionality
         const profileVideo = document.getElementById('profile-video');
         if (profileVideo) {
-            // Add click event to play/pause video
+            // Add click event to play/pause video with audio
             profileVideo.addEventListener('click', function() {
                 if (this.paused) {
-                    this.play();
+                    // Enable audio and play
+                    this.muted = false;
+                    this.play().catch(e => {
+                        console.log('Video play failed:', e);
+                        // If unmuted play fails, try muted play
+                        this.muted = true;
+                        this.play();
+                    });
                 } else {
                     this.pause();
                 }
