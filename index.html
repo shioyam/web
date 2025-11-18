@@ -744,7 +744,7 @@
         <div class="hero-container">
             <!-- Profile Video -->
             <div class="hero-photo">
-                <video src="my-ai-jp.mp4" autoplay loop playsinline controls title="Michihiro Shioya"></video>
+                <video id="profile-video" src="my-ai-jp.mp4" autoplay loop playsinline controls title="Michihiro Shioya"></video>
             </div>
             <h1>Michihiro Shioya</h1>
             <p class="tagline" data-ja="形式より実質を重んじる | IT専門家 | 水泳愛好家" data-en="Essence over Form | IT Professional | Swimming Enthusiast">形式より実質を重んじる | IT専門家 | 水泳愛好家</p>
@@ -914,6 +914,14 @@
                     element.textContent = text;
                 }
             });
+
+            // Update profile video source based on language
+            const profileVideo = document.getElementById('profile-video');
+            if (profileVideo) {
+                const videoSrc = lang === 'ja' ? 'my-ai-jp.mp4' : 'my-ai-en.mp4';
+                profileVideo.src = videoSrc;
+                profileVideo.load(); // Reload the video with new source
+            }
 
             // Update HTML lang attribute
             document.documentElement.lang = lang;
